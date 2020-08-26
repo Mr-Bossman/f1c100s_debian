@@ -2,7 +2,7 @@
 
 cd output
 rm sdcard.img
-dd if=/dev/zero of=sdcard.img bs=1M count=300
+dd if=/dev/zero of=sdcard.img bs=1M count=600
 cat <<EOT | sudo  fdisk -u sdcard.img
 n
 
@@ -16,7 +16,7 @@ n
 
 
 
-+200M
++500M
 w
 EOT
 _loop=$(sudo losetup -f)

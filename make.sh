@@ -29,9 +29,6 @@ echo dtb-y += f1c100s_linux.dtb >> arch/arm/boot/dts/Makefile
 
 make clean
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make linux_defconfig
-
-cp ../configs/linux.config .config
-
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make -j64
 
 cd ..
