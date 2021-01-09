@@ -1,6 +1,6 @@
 #! /bin/bash
 
-cd u-boot
+cd f1c100s-u-boot
 
 cp ../configs/uboot_defconfig configs/uboot_defconfig
 cp ../dts/f1c100s_uboot.dts arch/arm/dts/f1c100s_uboot.dts
@@ -29,7 +29,7 @@ echo dtb-y += f1c100s_linux.dtb >> arch/arm/boot/dts/Makefile
 
 make clean
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make linux_defconfig
-ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make -j64
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make -j64 deb-pkg
 
 cd ..
 

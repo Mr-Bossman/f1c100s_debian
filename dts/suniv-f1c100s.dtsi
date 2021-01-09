@@ -4,8 +4,8 @@
  * Copyright 2018 Mesih Kilinc <mesihkilinc@gmail.com>
  */
 
-#include <dt-bindings/clock/suniv-ccu.h>
-#include <dt-bindings/reset/suniv-ccu.h>
+/include/ <dt-bindings/clock/suniv-ccu.h>
+/include/ <dt-bindings/reset/suniv-ccu.h>
 
 / {
 	#address-cells = <1>;

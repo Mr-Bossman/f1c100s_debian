@@ -22,4 +22,22 @@ sudo cp /usr/bin/qemu-arm-static output/rootfs/usr/bin/
 
 sudo chroot output/rootfs/ /usr/bin/qemu-arm-static /bin/bash -i
 
+/debootstrap/debootstrap --second-stage
 
+apt install -y dialog makedev nano tasksel 
+
+echo "0.0 0 0.0
+0
+LOCAL" >  /etc/adjtime
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen en_US.UTF-8
+
+apt install -y locales
+
+tasksel install standard
+
+exit 
+cp linux/*.deb output/rootfs/linux.deb
