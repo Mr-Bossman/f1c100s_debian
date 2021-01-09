@@ -32,6 +32,7 @@ make clean
 
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make linux_defconfig
 ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make -j64 deb-pkg LOCALVERSION=-custom
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- make -j64
 cd ..
 
 
