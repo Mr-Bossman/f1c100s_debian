@@ -8,15 +8,12 @@ a thing i made to build the image without build root so u can add other root fil
 
 sudo debootstrap --foreign --variant=minbase --components=main,non-free --include=systemd-sysv,cryptsetup,console-setup --arch armel buster output/rootfs http://deb.debian.org/debian/
 
+cp *.deb output/rootfs/
 
-./pack.sh
+./pack.sh 
+#wait till the pause and then do the following
+#to chroot into rootfs 
 
-sudo dd if=output/sdcard.img of=/dev/sdX
-
-
-to chroot into rootfs 
-
-sudo apt-get install qemu-user-static 
 
 sudo cp /usr/bin/qemu-arm-static output/rootfs/usr/bin/
 
@@ -38,6 +35,11 @@ locale-gen en_US.UTF-8
 apt install -y locales
 
 tasksel install standard
-umount proc
+
+dpkg -i /*.deb
 exit 
-cp linux/*.deb output/rootfs/linux.deb
+
+#continue
+
+sudo dd if=output/sdcard.img of=/dev/sdX
+
