@@ -74,12 +74,12 @@
 	status = "okay";
 };
 
-&mmc1 {
+/*&mmc1 {
 	vmmc-supply = <&reg_vcc3v3>;
 	bus-width = <1>;
 	broken-cd;
 	status = "okay";
-};
+};*/
 
 &uart0 {
 	pinctrl-names = "default";
