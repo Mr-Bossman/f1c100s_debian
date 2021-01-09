@@ -13,7 +13,7 @@ cp *.deb output/rootfs/
 ./pack.sh 
 #wait till the pause and then do the following
 #to chroot into rootfs 
-co *.deb output/rootfs
+
 
 sudo cp /usr/bin/qemu-arm-static output/rootfs/usr/bin/
 
