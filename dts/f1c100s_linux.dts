@@ -4,8 +4,8 @@
  */
 
 /dts-v1/;
-/include/ "suniv-f1c100s.dtsi"
-/include/ <dt-bindings/gpio/gpio.h>
+#include "suniv-f1c100s.dtsi"
+#include <dt-bindings/gpio/gpio.h>
 
 / {
 	model = "Lichee Pi Nano";

@@ -38,6 +38,6 @@ locale-gen en_US.UTF-8
 apt install -y locales
 
 tasksel install standard
-
+umount proc
 exit 
 cp linux/*.deb output/rootfs/linux.deb
