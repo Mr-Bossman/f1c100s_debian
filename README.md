@@ -42,5 +42,6 @@ exit
 
 #continue
 
-sudo dd if=output/sdcard.img of=/dev/sdX
+sudo dd if=output/sdcard.img of=/dev/sdX bs=4M status=progress conv=fsync oflags=sync
+
 
