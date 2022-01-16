@@ -6,5 +6,5 @@ sudo apt-get install gawk wget git diffstat unzip texinfo \
 
 rm -rf linux
 rm -rf u-boot
-git clone -b nano-lcd800480 https://github.com/Mr-Bossman/f1c100s-u-boot.git
-git clone -b test git://github.com/Mr-Bossman/linux.git
+git clone -b f1c100s https://github.com/Mr-Bossman/u-boot.git
+git clone -b F1C100s git://github.com/Mr-Bossman/linux.git

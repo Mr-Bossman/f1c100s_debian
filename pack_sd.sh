@@ -22,17 +22,17 @@ EOT
 _loop=$(sudo losetup -f)
 sudo losetup -P $_loop sdcard.img
 sudo mkfs.vfat ${_loop}p1
-sudo mkfs.ext4 ${_loop}p2 
-sudo dd if=../f1c100s-u-boot/u-boot-sunxi-with-spl.bin of=$_loop bs=1024 seek=8
+sudo mkfs.ext4 ${_loop}p2
+sudo dd if=../u-boot/u-boot-sunxi-with-spl.bin of=$_loop bs=1024 seek=8
 sudo sync
 
 sudo mount ${_loop}p2 p2
 sudo mount ${_loop}p1 rootfs/boot
 read -p "run comands in readme b4 coninue ..."
 
-sudo cp ../linux/arch/arm/boot/zImage rootfs/boot/zImage 
-sudo cp ../linux/arch/arm/boot/dts/f1c100s_linux.dtb rootfs/boot/f1c100s_linux.dtb
-sudo cp ../f1c100s-u-boot/boot.scr rootfs/boot/boot.scr
+sudo cp ../linux/arch/arm/boot/zImage rootfs/boot/zImage
+sudo cp ../linux/arch/arm/boot/dts/suniv-f1c100s-licheepi-nano.dtb rootfs/boot/f1c100s_linux.dtb
+sudo cp ../u-boot/boot.scr rootfs/boot/boot.scr
 sudo umount rootfs/boot
 sudo cp -a rootfs/* p2
 
@@ -40,4 +40,3 @@ sudo cp -a rootfs/* p2
 
 sudo umount p2
 sudo losetup -d $_loop
-
